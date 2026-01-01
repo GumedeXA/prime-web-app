@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "export": "next export",
-    "predeploy": "next build && next export",
+    "predeploy": "GITHUB_PAGES=true npm run build && npm run export",
     "deploy": "gh-pages -d out"
   },
   "dependencies": {

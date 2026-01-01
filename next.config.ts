@@ -1,19 +1,17 @@
 import type { NextConfig } from "next";
 
-const isProd = process.env.NODE_ENV === "production";
+const isGithubPages = process.env.GITHUB_PAGES === "true";
+
+const repoName = "prime-web-app";
 
 const nextConfig: NextConfig = {
-  reactCompiler: true,
-
-  // Enable static HTML export
-  output: "export",
-
-  // GitHub Pages requires a base path with your repo name in production
-  basePath: isProd ? "/prime-web-app" : "",      // <-- replace REPO_NAME
-  assetPrefix: isProd ? "/prime-web-app/" : "",  // ensures assets load correctly
-
-  // Optional: enable strict mode if you want
   reactStrictMode: true,
+  output: "export",
+  basePath: isGithubPages ? `/${repoName}` : "",
+  assetPrefix: isGithubPages ? `/${repoName}/` : "",
+  compiler: {
+    reactRemoveProperties: true,
+  },
 };
 
 export default nextConfig;
