@@ -6,18 +6,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "export": "next export",
+    "predeploy": "next build && next export",
+    "deploy": "gh-pages -d out"
   },
   "dependencies": {
     "lucide-react": "^0.562.0",
     "next": "16.0.10",
     "react": "19.2.1",
-    "react-dom": "19.2.1",
-    "dev": "next dev",
-    "build": "next build",
-    "export": "next export",
-    "predeploy": "next build && next export",
-    "deploy": "gh-pages -d out"
+    "react-dom": "19.2.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.18",
